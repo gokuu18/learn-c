@@ -11,43 +11,45 @@ int main()
     int num;
     for (int i = 1; i < 5; i++)
     {
-        printf("Enter '1' to convert kilometres to Miles\nEnter '2' to convert Inches to Foot\nEnter '3' to convert Centimetres to Inches\nEnter '4' to convert pound to kilograms\nEnter '5' to convert Inches to Metres\nEnter '0' to exit :\n");
+        printf("Enter '1' to convert kilometers to Miles\nEnter '2' to convert Inches to Foot\nEnter '3' to convert Centimeters to Inches\nEnter '4' to convert pound to kilograms\nEnter '5' to convert Inches to Meters\nEnter '0' to exit :\n");
         scanf("%d", &num);
 
-        if (num == 1)
+        switch (num)
         {
+        case 1:
             KmtoMiles();
-        }
-        else if (num == 2)
-        {
+            break;
+
+        case 2:
             InchestoFoot();
-        }
-        else if (num == 3)
-        {
+            break;
+
+        case 3:
             CmstoInches();
-        }
-        else if (num == 4)
-        {
+            break;
+
+        case 4:
             PoundtoKg();
-        }
-        else if (num == 5)
-        {
+            break;
+
+        case 5:
             InchestoMetres();
-        }
-        else if (num == 0)
-        {
-            goto label;
+            break;
+
+        case 0:
+            goto exit;
+            break;
         }
     }
-label:
+exit:
     return 0;
 }
 
 void KmtoMiles()
 {
-    printf("You chose to convert from KmtoMiles!\n");
+    printf("You chose to convert from Km to Miles!\n");
     float a;
-    printf("Enter Kilometre number you want to convert to miles: ");
+    printf("Enter Kilometer number you want to convert to miles: ");
     scanf("%f", &a);
 
     printf("The value is %.5f!\n", a * 0.621371);
@@ -56,7 +58,7 @@ void KmtoMiles()
 
 void InchestoFoot()
 {
-    printf("You chose to convert from InchestoFoot!\n");
+    printf("You chose to convert from Inches to Foot!\n");
     float a;
     printf("Enter Inches number you want to convert to Foot: ");
     scanf("%f", &a);
@@ -67,9 +69,9 @@ void InchestoFoot()
 
 void CmstoInches()
 {
-    printf("You chose to convert from CmstoInches!\n");
+    printf("You chose to convert from Cms to Inches!\n");
     float a;
-    printf("Enter Centimetres number you want to convert to Inches: ");
+    printf("Enter Centimeters number you want to convert to Inches: ");
     scanf("%f", &a);
 
     printf("The value is %.6f!\n", a / 2.54);
@@ -78,9 +80,9 @@ void CmstoInches()
 
 void PoundtoKg()
 {
-    printf("You chose to convert from PoundtoKg!\n");
+    printf("You chose to convert from Pound to Kg!\n");
     float a;
-    printf("Enter Pound number you want to convert to Kilometres: ");
+    printf("Enter Pound number you want to convert to Kilometers: ");
     scanf("%f", &a);
 
     printf("The value is %.3f!\n", a / 2.205);
@@ -89,9 +91,9 @@ void PoundtoKg()
 
 void InchestoMetres()
 {
-    printf("You chose to convert from InchestoMetres!\n");
+    printf("You chose to convert from Inches to Meters!\n");
     float a;
-    printf("Enter Inches number you want to convert to Metres: ");
+    printf("Enter Inches number you want to convert to Meters: ");
     scanf("%f", &a);
 
     printf("The value is %.3f!\n", a / 39.37);
